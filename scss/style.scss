@@ -1,0 +1,882 @@
+@charset "utf-8";
+@import "variables";
+
+/*header*/
+.wrap{
+    width: 100%;
+    overflow: hidden;
+}
+header{
+    width: 100%;
+    height: 90px;
+    ::after{
+       @include afterclear;
+    }
+}
+.logo{
+    width: 250px;
+    height: 90px;
+    float: left;
+    img{
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+.gnb{
+    float: left;
+    width: 100%;
+    position: relative;
+    display: none;
+    z-index: 10000;
+    &::after{
+        @include afterclear;
+    }
+    ul{
+        width: 100%;
+        float: right;
+        height: 310px;
+        position: absolute;
+        background-color: #fff;
+        z-index: 1000;
+        li{
+            padding-left: 30px;
+            margin-top: 40px;
+            a{
+                font-size: $font-sizes+7;
+                font-weight: 400;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+.hicon{
+    float: right;
+    width:47px;
+    margin-top: 75px;
+    position: relative;
+    left: 0;
+    top: 10px;
+    z-index: 100;
+    ul>li{
+        margin: {
+            right: 1px;
+            top: 17px;
+        }
+        &:nth-child(1)::after{
+            content: "";
+            display: block;
+            border-bottom: 1px solid;
+            width: 24px;
+        }
+        :hover{
+            opacity: 0.5;
+        }
+    }
+}
+/*navbtn*/
+.navbtn {
+    position: absolute;
+    top: 25px;
+    right: 18px;
+    width: 35px;
+    height: 40px;
+    z-index: 20;
+    span{
+        background: rgb(0, 0, 0);
+        height: 7px;
+        display: block;
+        transition: .1s;
+        &:nth-child(2) {
+            margin: 3px 0; 
+        }
+    }
+}
+.open span{
+    &:nth-child(2) {
+        display: none;
+    }
+    &:nth-child(1) {
+        transform:rotate(45deg);
+    }
+    &:nth-child(3) {
+        transform:rotate(-45deg);
+        margin-top: -7px;
+    }
+}
+/*main*/
+main{
+    width: 100%;
+    background-color: $color-secondary;
+    padding-top: 30px;
+    height: 800px;
+    & .visual{
+        height: 900px;
+        width: 95%;
+        background-color: $color-primary;
+        border-radius: 100px;
+        margin: 0 auto;
+        border: 1px solid $color-primary;
+        position: relative;  
+    }
+}
+.gallery{
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    ul>li{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        background-color: $color-primary;
+        border-radius: 100px;
+        border: 1px solid $color-primary;
+        height: 800px;
+    }
+    .text1{
+        width: 80%;
+        padding-top: 70px;
+        padding-left: 30px;
+        p{
+            color: $color-title;
+            padding-top: 20px;
+            width: 80%;
+            @include m-font-text;
+        }
+    }
+    .subtitle{
+        @include m-font-subtitle;
+    }
+    .title{
+        @include m-font-title;
+    }
+    img{
+        width: 75%;
+        padding-left: 20px;
+        margin-top: 20px;
+    }
+}
+.items{
+    width: 68px;
+    position: absolute;
+    bottom: 25%;
+    right: 2px;
+    img{
+        display: block;
+        margin-bottom: 10px;
+        width: 70%;
+        &:hover{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+}
+.bg4{
+    position: absolute;
+    top: -8000px;
+    right: 0;
+    width: 60%;
+    height: 1100px;
+    z-index: -2;
+    background-color: $color-secondary;
+    transition: $transition-2s;
+    &.on{
+        top: 800px;
+    }
+}
+.contents1{
+    width: 100%;
+    height: 800px;
+    .in-contents1{
+        height: 1000px;
+        padding-top: 180px;
+    }
+    .subtitle, .title{
+        margin-left: 30px;
+    }
+    .con1{
+        display: none;
+    }
+    .img{
+        margin: 0 auto;
+        width: 90%;
+    }
+    .img>img{
+        width: 100%;
+    }
+    .con2{
+        width: 90%;
+        margin-top: 20px;
+        float: left;
+        font-weight: 400;
+        margin-left: 20px;
+        position: relative; right: -20%; transition: all 2s;
+        &.on{
+            right: 0;
+        }
+        .text{
+            @include m-font-text;
+            p{
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            span{
+                font-size: 18px;
+            }
+        }
+    }
+}
+/*contents2*/
+.contents2{
+    width: 100%;
+    height: 300px;
+    margin-top: 330px;
+    text-align: center;
+    .in-contents2{
+        width: 90%;
+        height: 200px;
+        margin: 0 auto;
+    }
+    .con2{
+        margin: 30px 0px;
+        @include m-font-text;
+        .shoplink{
+            margin: 20px auto;
+        }
+    }
+}
+/*contents3*/
+.contents3{
+    width: 100%;
+    height: 1000px;
+    .in-contents3{
+        margin: 50px auto;
+    }
+    .subtitle, .title, .shoplink{
+        margin-left: 30px;
+    }
+    .con1{
+        img{
+            width: 50%;
+            margin-top: 50px;
+            margin-left: 50px;
+            position: relative;
+            left: -100px;
+            transition: all 2s;
+            &.on{
+                left: 0;
+            }
+        }
+    }
+    .con2{
+        img{
+            width: 70%;
+            margin-top: 30px;
+            margin-left: 100px;
+            position: relative;
+            bottom: -100px;
+            transition: all 2s;
+        &.on{
+            bottom:0;
+        }
+        }  
+    }
+}
+/*contents4*/
+.contents4{
+    width: 100%;
+    height: 430px;
+    margin: 70px 0px;
+    background-image: url(../img/contents3.jpg);
+}
+/*contents5*/
+.contents5{
+    width: 100%;
+    height: 1100px;
+    .con{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .text{
+        @include m-font-text;
+        margin: 20px 0;
+    }
+    .contentsimg{
+        padding-top: 50px;
+        &::after{
+            content: "";
+            height: 150px;
+            width: 400px;
+            background-color: #efefef;
+            display: block;
+            position: relative;
+            left: 0;
+            top: -80px;
+            z-index: -2;
+            margin: 0 auto;
+        }
+        img{
+            width: 350px;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            left:0;
+            top: -100px;
+            transition: all 2s;
+            &.on{
+                top:0px;
+            }
+        }
+    }
+    .contents{
+        width: 90%;
+        text-align: left;
+        margin: 0 auto;
+    }
+}
+/*contents6*/
+.contents6{
+    width: 100%;
+    height: 260px;
+    margin-top: 250px;
+    border-top:1px  solid $color-subtitle;
+    .in-contents6{
+        display: flex;
+    }
+    .connect{
+        height: 260px;
+        flex: 1;
+        box-sizing: border-box;
+        border-right: 1px solid $color-subtitle;
+        padding: 40px 10px;
+        text-align: center;
+        &:nth-child(3){
+            border-right: 0px solid $color-subtitle;
+        }
+        .ctitle{
+            @include m-font-title;
+            color: $color-point;
+            font-size: $font-sizem;
+            margin: 10px 0;
+        }
+        .ctext{
+            font-size: $font-sizes+5;
+        }
+        p{
+            font-size: $font-sizes;
+        }
+    }
+}
+/*footer*/
+footer{
+    width: 100%;
+    height: 600px;
+    background-color: $color-bg;
+    .flogo{
+        width: 90%;
+        height: 50px;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+    .in-footer{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .fmenu{
+        display: flex;
+        width: 100%;
+        height: 250px;
+        gap: 10px;
+        color: $color-secondary;
+        margin-top: 20px;
+        justify-content: space-around;
+        .info{
+            .ftitle{
+                @include m-font-text;
+                font-weight: 500;
+                line-height: 30px;
+            }
+            .ftext{
+                @include m-font-text;
+                font-weight: 300;
+                line-height: 30px;
+            }
+        }
+    }
+    .copy{
+        @include m-font-text;
+        color: $color-secondary;
+        width: 100%;
+        font-weight: 300;
+    }
+}
+
+
+/*bgtext*/
+.bgtext{
+    font-size: 70px;
+    color: $color-secondary;
+    font-weight: 700;
+    margin-left: -20px;
+    position: relative;
+    left: -20%;
+    transition: $transition-2s;
+    &.on{
+        left: 0;
+    }
+}
+/*circle*/
+.circle {
+    @include circle;
+    top:2300px;
+    left: -100px;
+    display: none;
+}
+.circle1 {
+    @include circle;
+    top: 3300px;
+    right: 0;
+}
+.circle.on, .circle1.on { @include circleon }
+/*shoplink*/
+.shoplink{
+    font-size: $font-sizem;
+    color: $color-point;
+    display: block;
+    width: 40%;
+    margin-top:30px;
+    font-weight: 500;
+    &::before{
+        content: '';
+        display: block;
+        width: 40%;
+        height: 3px;
+        background: $color-point;
+        position: relative;
+        left: 0;
+        top: 35px;
+        z-index: 0;
+        transition: all 0.5s; 
+    }
+    &:hover::before{width:80%;}
+}
+section .subtitle{
+    @include m-font-subtitle;
+}
+section .title{
+    @include m-font-title;
+}
+
+
+
+
+
+
+@include mobile{ 
+
+    .gallery{
+        .subtitle{
+            @include t-font-subtitle;
+        }
+        .title{
+            @include t-font-title;
+        }
+        img{
+            padding-left: 80px;
+           
+        }
+    }
+    .contents1{
+        .in-contents1{
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 150px;
+        }
+        .img{
+            margin: 20px auto;
+        }
+        .img>img{
+            width: 100%;
+        }
+    }
+    /*contents2*/
+    .contents2{
+        .con2{
+            @include t-font-text;
+        }
+    }
+    /*contents3*/
+    .contents3{
+        height: 700px;
+        .in-contents3{
+            width: 90%;
+            display: flex;
+        }
+        .con1{
+            width: 100%;
+            img{
+                width: 80%;
+            }
+        }
+        .con2{
+            img{
+                width: 80%;
+                margin-left: 50px;
+            }  
+        }
+    }
+    /*contents5*/
+    .contents5{
+        height: 700px;
+        .in-contents5{
+            width: 90%;
+            margin: 0 auto;
+        }
+        .con{
+            display: flex;
+            gap: 20px;
+            .text{
+                @include t-font-text;
+                margin: 20px 0;
+            }
+            .contents{
+                text-align: right;
+            }
+        }
+        .con1{
+            .contents{
+                a{
+                    display: inline-block;
+                    text-align: right;
+                }
+            } 
+        }
+        .con2{
+            .contents{
+                text-align: left;
+                padding-top: 200px;
+            }
+        }
+        
+    }
+    /*contents6*/
+    .contents6{
+        height: 260px;
+        .in-contents6{
+            display: flex;
+        }
+        .connect{
+            .ctitle{
+                @include m-font-title;
+                color: $color-point;
+                font-size: $font-sizem;
+            }
+            .ctext{
+                font-size: $font-sizes+8;
+            }
+            p{
+                font-size: $font-sizes+5;
+            }
+        }
+    }
+}
+@include tablet{
+    main{
+        height: 500px;
+        & .visual{
+            height: 650px;
+        }
+    }
+    .gallery{
+        height: 500px;
+        ul>li{
+            height: 500px;
+            display: flex;
+            align-items: center;
+        }
+        .text1{
+            width: 100%;
+            p{
+                width: 100%;
+                @include t-font-text;
+            }
+        }
+        .subtitle{
+            @include t-font-subtitle;
+        }
+        .title{
+            @include t-font-title;
+        }
+        .img >img{
+            width: 100%;
+            padding-left: 0px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .items{
+        width: 68px;
+        bottom: 20%;
+        right: 35%;
+        display: flex;
+        gap: 20px;
+        img{
+            width: 90%;
+        } 
+    }
+    /*bg4*/
+    .bg4{
+        z-index: -2;
+        &.on{
+            top: 600px;
+        }
+    }
+    /*bgtext*/
+    .bgtext{
+        font-size: 90px;
+        &.on{
+            left: 30px;
+        }
+    }
+    /*contents3*/
+    .contents3{
+        height: 800px;
+    }
+    section .subtitle{
+        @include t-font-subtitle;
+    }
+    section .title{
+        @include t-font-title;
+    }       
+    /*circle*/
+    .circle {
+        display: block;
+    }
+}
+@include desktop{
+    header{
+        width: 100%;
+    }
+    .gnb{
+        width: auto;
+        height: 90px;
+        display: block;
+        float: left;
+        position:inherit;
+        ul{
+            width: 67%;
+            float: right;
+            height: auto;
+            li{
+                float: right;
+                }
+            }
+        }
+    .hicon{
+        width: 13%;
+        margin-top: 10px;
+        ul>li{
+            float: left;
+            width: 20%;
+            margin: {
+                right: 0px;
+            }
+        }
+    }
+    /*navbtn*/
+    .navbtn {
+       display: none;
+    }
+    /*main*/
+    .gallery{
+        height: 800px;
+        ul>li{
+            height: 800px;
+        }
+        .text1{
+            width: 45%;
+            padding-top: 0px;
+            padding-left: 80px;
+            p{
+                @include p-font-text;
+            }
+        }
+        .subtitle{
+            @include p-font-subtitle;
+        }
+        .title{
+            @include p-font-title;
+        }
+        .img >img{
+            width:80%;
+            margin-top: 0px;
+        }
+    }
+    .items{
+        bottom: 100px;
+        right: 10px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    /*bgtext*/
+    .bgtext{
+        font-size: 100px;
+        top: 200px;
+        &.on{
+            left: 30px;
+            top: 200px;
+        }
+        &.iconic{
+            top: -50px;
+        }
+    }
+
+    /*bg4*/
+    .bg4{
+        z-index: -2;
+        &.on{
+            top: 600px;
+        }
+    }
+    .contents1{
+        height: 800px;
+        .in-contents1{
+            height: 1000px;
+            padding-top: 300px;
+        }
+        .project{
+            display: flex;
+            align-items: center;
+            .con1{
+                @include t-font-text;
+                text-align: right;
+                display: block;
+                width: 25%;
+                margin-right: 20px;
+                position: relative; left: -20%; transition: all 2s;
+            &.on{
+                left: 0;
+            }
+            }
+            .img{
+                width: 60%;
+            }
+            .img>img{
+                width: 100%;
+                display: block;
+            }
+            .con2{
+                width: 50%;
+                margin-left: 20px;
+                position: relative; right: -20%; transition: all 2s;
+                &.on{
+                    right: 0;
+                }
+                .text{
+                    @include p-font-text;
+                    p{
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                        font-weight: 500;
+                    }
+                    span{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }   
+    }
+    /*contents2*/
+    .contents2{
+        .in-contents2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .con2{
+            @include p-font-text;
+        }
+    }
+    /*contents3*/
+    .contents3{
+        height: 1000px;
+        .in-contents3{
+            display: flex;
+        }
+        .con1{   
+            width: 50%;
+            img{
+                width: 60%;
+                margin-left: 150px;
+            }
+        }
+        .con2{
+            img{
+                width: 100%;
+                margin-left: 0px;
+            }  
+        }
+    }
+    /*contents5*/
+    .contents5{
+        height: 900px;
+        .in-contents5{
+            width: 75%;
+        }
+        .con{
+            gap: 40px;
+            align-items: center;
+            .text{
+                @include p-font-text;
+                margin: 20px 0;
+            }
+            .contentsimg{
+                &::after{
+                    width: 550px;
+                }
+                img{
+                    width: 500px;
+                }
+            }
+            .contents{
+                width: 70%;
+            }
+        }
+    } 
+    /*footer*/
+    footer{
+        height: 400px;
+        .flogo{
+            padding-left: 0px;
+        }
+        .in-footer{
+            display: flex;
+        }
+        .fmenu{
+            width: 50%;
+        }
+        .copy{
+            width: 30%;
+        }
+    }
+    section .subtitle{
+        @include p-font-subtitle;
+    }
+    section .title{
+        @include p-font-title;
+    }
+    /*circle*/
+    .circle {
+        top:1800px;
+        left: -100px;
+    }
+    .circle1 {
+        top: 3300px;
+        right: 0;
+    }
+    }   
+      

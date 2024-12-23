@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassina Login</title>
+	<link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+    <header>
+		<div class="logo">
+			<a href="index.html"><img src="img/LOGO.png" alt="CASSINA"></a>
+		</div>
+		<button type="button" class="navbtn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<nav class="gnb">
+			<ul>
+				<li><a href="#">PRODUCTS & COLLECTIONS</a></li>
+				<li><a href="#">DESIGNERS</a></li>
+				<li><a href="#">PROJECTS</a></li>
+				<li><a href="#">NEWS & PRESS</a></li>
+			</ul>
+		</nav>
+		<div class="hicon">
+			<ul>
+				<li><a href="login.html"><img src="img/loginicon.png" alt="instagram"></a></li>
+				<li><a href="#"><img src="img/instagramicon.png" alt="instagram"></a></li>
+				<li><a href="#"><img src="img/facebookicon.png" alt="facebook"></a></li>
+				<li><a href="#"><img src="img/behanceicon.png" alt="behance"></a></li>
+				<li><a href="#"><img src="img/twittericon.png" alt="twitter"></a></li>
+			</ul>
+		</div>
+	</header>
+	<div class="section">
+		<div class="in-section">
+			<div class="notice">
+				<h1>Don't Have an account?</h1>
+				<p>Hello, welcome to CASSINA.
+					If you don't have an ID, please complete your membership</p>
+				<a href="#">Join Membership</a>
+			</div>
+		  <form class="login" name="loginform">
+			<h1>Member Login</h1>
+			<input type="text" placeholder="ID" name="userid">
+			<input type="password" placeholder="PASSWORD" name="userpw">
+			<input type="email" placeholder="E-MAIL" name="useremail">
+			<input type="checkbox" checked> Remember me for 30 days
+			<input type="button" value="Sign in with Google">
+			<input type="button" value="Sign in with NAVER">
+			<input type="button" value="Sign in with Kakao">
+			<input type="submit" value="Sing in" id="loginok">
+		  </form>
+		</div>
+			
+	</div>
+	<footer>
+		<div class="flogo">
+			<img src="img/FLOGO1.png" alt="logo">
+		</div>
+		<div class="in-footer">
+			
+			<div class="fmenu">
+					<div class="info">
+						<div class="ftitle">COLLECTIONS</div>
+						<div class="ftext">
+							Living<br>
+							Dining<br>
+							Sleeping<br>
+							Outdoors
+						</div>
+					</div>
+					<div class="info">
+						<div class="ftitle">
+							COMPANY
+						</div>
+						<div class="ftext">
+							History<br>
+							Manifesto<br>
+							Cassina LAB
+						</div>
+					</div>
+					<div class="info">
+						<div class="ftitle">
+							COMPANY INFO
+						</div>
+						<div class="ftext">
+							Contact Us<br>
+							Store Locator<br>
+							Careers<br>
+							Privacy Policy<br>
+							Privacy Policy B2B<br>
+							Code of ethics<br>
+							Cookie Policy
+						</div>
+					</div>
+			</div>
+			<div class="copy">
+				Cassina S.p.A - Sede legale: 1, Via L. Busnelli 20821 Meda (MB)
+				<br><br>
+				Capitale Sociale € 16.000.000,00<br>
+				REA MB - 1311974<br>
+				C.F. e nr. iscrizione Registro Imprese 09731630159<br>
+				Ufficio del Registro Imprese di Milano Monza Brianza Lodi<br>
+				Partita IVA 00976180968<br>
+				Direzione e coordinamento di Haworth Italy Holding S.r.l<br><br>
+				Copyright © 2022 CASSINA. Tutti i diritti riservati
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		let loginform = document.getElementsByName('loginform')[0];
+		let loginok = document.querySelector('#loginok');
+		loginok.addEventListener('click', loginokfunc);
+
+		function loginokfunc() {
+			var userid = document.getElementsByName('userid')[0];
+			var userpw = document.getElementsByName('userpw')[0];
+			var useremail = document.getElementsByName('useremail')[0];
+			if (userid.value == "" || userid.value == null) {
+				alert("아이디입력 오류.. 다시 입력 해주세요");
+				userid.focus();
+				return false;
+			}
+			if (userid.value.trim() !== "yhy8283" || userid.value.length != 7) {
+				alert("아이디가 일치하지 않습니다... 다시 입력 해주세요");
+				userid.focus();
+				return false;
+			}
+			if (userpw.value == "" || userpw.value == null) {
+				alert("비밀번호입력 오류.. 다시 입력 해주세요");
+				userpw.focus();
+				return false;
+			}
+			if (userpw.value.trim() !== "dbsgkdbs77" || userpw.value.length != 10) {
+				alert("비밀번호가 일치하지 않습니다.. 다시 입력 해주세요");
+				userpw.focus();
+				return false;
+			}
+			if (useremail.value == "" || useremail.value == null) {
+				alert("이메일입력 오류.. 다시 입력 해주세요");
+				useremail.focus();
+				return false;
+			}
+			if (useremail.value.trim() !== "yhy8283@naver.com") {
+				alert("이메일가 일치하지 않습니다... 다시 입력 해주세요");
+				useremail.focus();
+				return false;
+			}
+			alert("로그인 실행");
+			loginform.submit();
+		}
+	</script>
+
+</body>
+</html>

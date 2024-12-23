@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap');
+
+*{margin: 0;padding: 0;font-family: 'Montserrat','Gothic A1', sans-serif;}
+html,body{width: 100%;height: 100%; }
+ol,ul,li{list-style: none;}
+a{text-decoration: none;color: #000;}
+img{border: 0; }
+header,section,nav,aside,article,main{display:block;}
+button{border: 0; background: none;}
+//variables
+
+$font-sizes : 10px;
+$font-sizem : 20px;
+$font-sizel : 30px;
+$font-sizell : 40px;
+
+$color-primary :  #fff;
+$color-secondary :  #efefef;
+$color-title : #2a2a2a;
+$color-subtitle : #6c6c6c;
+$color-point : #ef333f;
+$color-bg :  #1d1d1b;
+
+$transition-2s : all 2s;
+
+
+//mixin
+@mixin afterclear{
+    content: "";
+    display: block;
+    clear: both;
+}
+@mixin m-font-subtitle{
+    font-size: $font-sizes+5;
+    font-weight: 400;
+    color: $color-subtitle;
+}
+@mixin m-font-title{
+    font-size: $font-sizel;
+    color: $color-title;
+    font-weight: 600;
+    padding-top: 10px;
+}
+@mixin m-font-text{
+    font-size: $font-sizes+5;
+    line-height: 25px;
+    font-weight: 500;
+    line-height: $font-sizem;
+}
+@mixin t-font-subtitle{
+    font-size: $font-sizem+5;
+    font-weight: 500;
+    color: $color-subtitle;
+}
+@mixin t-font-title{
+    font-size: $font-sizell;
+    color: $color-title;
+    font-weight: 600;
+    padding-top: 10px;
+}
+@mixin t-font-text{
+    font-size: $font-sizes+8;
+    line-height: 25px;
+    font-weight: 400;
+    line-height: $font-sizem;
+}
+@mixin p-font-subtitle{
+    font-size: $font-sizel;
+    font-weight: 500;
+    color: $color-subtitle;
+}
+@mixin p-font-title{
+    font-size: $font-sizell+5;
+    color: $color-title;
+    font-weight: 600;
+    padding-top: 10px;
+}
+@mixin p-font-text{
+    font-size: $font-sizem;
+    line-height: 25px;
+    font-weight: 300;
+    line-height: $font-sizem+5;
+}
+@mixin circle{
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    z-index: -2;
+    border:1px solid $color-subtitle;
+    transition: all 2s;
+    position: absolute;
+}
+@mixin circleon{
+    border: 40px solid $color-secondary;
+}
+@mixin logininput{
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    transition: 0.35s;
+    padding-left: 35px;
+}
+
+
+
+//반응형 화면 크기
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1300px;
+
+//반응형, 브라우저 크기가 767px 이하일때
+@mixin mobile{
+    @media all and (min-width: $mobile){
+    @content;
+  }
+}
+
+//반응형, 브라우저 크기가 768이상, 1023px 이하일때
+@mixin tablet{
+    @media all and (min-width: $tablet){
+    @content;
+  }
+}
+
+//반응형, 브라우저 크기가 1024px 이상일때
+@mixin desktop{
+    @media all and (min-width:$desktop){
+    @content;
+  }
+}
