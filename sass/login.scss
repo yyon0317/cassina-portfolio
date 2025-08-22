@@ -1,0 +1,113 @@
+@charset "utf-8";
+@import "variables";
+@import "style";
+
+.hicon{
+    display: none;
+}
+@include desktop{
+    .hicon{
+        display: block;
+    }
+}
+.section{
+    width: 100%;
+    height: 100vh;
+    padding-top: 200px;
+    background: url(../img/loginbg.jpg) no-repeat;
+    background-size: cover;
+    .in-section {
+        width: 90%;
+        max-width: 1300px;
+        height:500px;
+        margin: 0 auto;
+        background-color: #1d1d1be1;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+}
+.notice{
+    width: 350px;
+    height: 300px;
+    padding: 10px;
+    color: $color-primary;
+    p{
+        @include t-font-text;
+    }
+    a{
+        border: 1px solid #efefef;
+        @include t-font-text;
+        color: #efefef;
+        padding: 5px 10px;
+        display: inline-block;
+        margin-top: 20px;
+        &:hover{
+           transition: all 0.35s;
+           background: #efefef; 
+           color: $color-title;
+        }
+    }
+}
+  .login {
+    width: 500px;
+    height: 500px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background: $color-primary;
+    margin-top: -30px;
+    h1 {
+      text-align: center;
+      line-height: 50px;
+    }
+    input:not([type="submit"],[type="checkbox"],[type="button"]) {
+      @include logininput;
+      border: 0px solid;
+      border-bottom: 1px solid #ccc;
+      &:hover {
+        border: 1px solid $color-point;
+        box-shadow: 0 0 1px $color-point;
+      }
+    }
+    input[type="submit"] {
+      background-color: $color-point;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      color: $color-primary;
+      margin-top: 10px;
+      cursor: pointer;
+      &:hover {
+        background-color: #000;
+      }
+    }
+    input[value="Sign in with Google"]{
+      @include logininput;
+      &:hover {
+        background-color: rgb(49, 116, 241);
+        color: $color-primary;
+      }
+    }
+    input[value="Sign in with NAVER"]{
+      @include logininput;
+      &:hover {
+        background-color: #03c75a;
+        color: $color-primary;
+      }
+    }
+    input[value="Sign in with Kakao"]{
+      @include logininput;
+      &:hover {
+        background-color: #f9e000;
+        color: $color-primary;
+      }
+    }
+
+    
+    /* button {
+      background-color: red;
+    } */
+  }

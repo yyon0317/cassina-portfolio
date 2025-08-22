@@ -226,7 +226,7 @@ main .visual {
 .gallery .subtitle {
   font-size: 15px;
   font-weight: 400;
-  color: #ef333f;
+  color: #6c6c6c;
 }
 .gallery .title {
   font-size: 30px;
@@ -567,7 +567,7 @@ footer .copy {
 /*shoplink*/
 .shoplink {
   font-size: 20px;
-  color: #2a2a2a;
+  color: #ef333f;
   display: block;
   width: 40%;
   margin-top: 30px;
@@ -578,7 +578,7 @@ footer .copy {
   display: block;
   width: 40%;
   height: 3px;
-  background: #8a8a8a;
+  background: #ef333f;
   position: relative;
   left: 0;
   top: 35px;
@@ -592,7 +592,7 @@ footer .copy {
 section .subtitle {
   font-size: 15px;
   font-weight: 400;
-  color: #ef333f;
+  color: #6c6c6c;
 }
 
 section .title {
@@ -606,7 +606,7 @@ section .title {
   .gallery .subtitle {
     font-size: 25px;
     font-weight: 500;
-    color: #ef333f;
+    color: #6c6c6c;
   }
   .gallery .title {
     font-size: 40px;
@@ -733,7 +733,7 @@ section .title {
   .gallery .subtitle {
     font-size: 25px;
     font-weight: 500;
-    color: #ef333f;
+    color: #6c6c6c;
   }
   .gallery .title {
     font-size: 40px;
@@ -778,7 +778,7 @@ section .title {
   section .subtitle {
     font-size: 25px;
     font-weight: 500;
-    color: #ef333f;
+    color: #6c6c6c;
   }
   section .title {
     font-size: 40px;
@@ -844,7 +844,7 @@ section .title {
   .gallery .subtitle {
     font-size: 30px;
     font-weight: 500;
-    color: #ef333f;
+    color: #6c6c6c;
   }
   .gallery .title {
     font-size: 45px;
@@ -931,6 +931,15 @@ section .title {
     font-weight: 300;
     line-height: 25px;
   }
+  .contents1 .project .con2 .text p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .contents1 .project .con2 .text span {
+    font-size: 18px;
+    font-weight: 500;
+  }
   /*contents2*/
   .contents2 .in-contents2 {
     display: flex;
@@ -1008,7 +1017,7 @@ section .title {
   section .subtitle {
     font-size: 30px;
     font-weight: 500;
-    color: #ef333f;
+    color: #6c6c6c;
   }
   section .title {
     font-size: 45px;
@@ -1178,3 +1187,5 @@ section .title {
   background-color: #f9e000;
   color: #fff;
 }
+
+/*# sourceMappingURL=login.css.map */
