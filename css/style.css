@@ -402,13 +402,14 @@ main .visual {
 .contents6 {
   width: 100%;
   height: 260px;
-  margin-top: 250px;
+  margin-top: 300px;
   border-top: 1px solid #6c6c6c;
 }
 .contents6 .in-contents6 {
   display: flex;
 }
 .contents6 .connect {
+  width: 33.3333%;
   height: 260px;
   flex: 1;
   box-sizing: border-box;
@@ -425,7 +426,7 @@ main .visual {
   font-weight: 600;
   padding-top: 10px;
   color: #ef333f;
-  font-size: 20px;
+  font-size: 10px;
   margin: 10px 0;
 }
 .contents6 .connect .ctext {
@@ -532,11 +533,11 @@ footer .copy {
 
 /*shoplink*/
 .shoplink {
-  font-size: 20px;
+  font-size: 15px;
   color: #ef333f;
   display: block;
   width: 40%;
-  margin-top: 30px;
+  margin-top: 20px;
   font-weight: 500;
 }
 .shoplink::before {
@@ -714,11 +715,12 @@ section .title {
     margin: 0 auto;
   }
   .items {
-    width: 68px;
+    width: 181px;
     bottom: 20%;
-    right: 35%;
+    right: 2%;
+  }
+  .items ul {
     display: flex;
-    gap: 20px;
   }
   .items img {
     width: 90%;

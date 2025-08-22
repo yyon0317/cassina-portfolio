@@ -14,11 +14,34 @@ $(window).scroll(function () {
 });
 $(document).ready(function () {
 
-	/*menu*/
-	//toggleClass()/fadeToggle 사용해서 menu버튼 동적효과 적용 
-	$('.navbtn').click(function () {
-		$('.gnb').fadeToggle(500)
-		$('.navbtn').toggleClass('open')
+	// js/jquery.js (토글 핸들러 보강)
+	$('.navbtn').attr({
+	'aria-expanded': 'false',
+	'aria-controls': 'global-nav'
+	});
+
+	$('.gnb').attr({
+	'id': 'global-nav',
+	'aria-hidden': 'true'
+	});
+
+	$('.navbtn').on('click', function() {
+	const $btn = $(this);
+	const $menu = $('.gnb');
+	const isOpen = $btn.attr('aria-expanded') === 'true';
+
+	$menu.fadeToggle(500);
+	$btn.toggleClass('open')
+		.attr('aria-expanded', String(!isOpen));
+	$menu.attr('aria-hidden', String(isOpen));
+
+	if (!isOpen) {
+		// 열릴 때 메뉴 첫 링크로 포커스 이동
+		$menu.find('a').first().focus();
+	} else {
+		// 닫히면 트리거 버튼으로 포커스 복귀
+		$btn.focus();
+	}
 	});
 
 	//autogallery ->fade
